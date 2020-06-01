@@ -1,11 +1,12 @@
 const generateBtn = document.querySelector('#generate');
 const textBox = document.querySelector('#password');
+const cardBox = document.querySelector('#wholecard');
 const charSetlettersUpper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 const charSetlettersLower = ["abcdefghijklmnopqrstuvwxyz"];
 const charSetSpecial = ["!@#$%^&*?"];
 const charSetNumbers = ["0123456789"];
 
-generateBtn.addEventListener('click', function writePassword() {
+generateBtn.addEventListener('click', function writePassword() { 
     const passLength = prompt('Length of Password:');
     const passUpper = confirm('Do you want to include uppercase letters?');
     const passLower = confirm('Do you want to include lowercase letters?');
