@@ -23,7 +23,7 @@ generateBtn.addEventListener('click', function writePassword() {
     if (passUpper === true && passLower === true && passSpecial === true && passNumber === true) {
       function generatePassword (passLength) {
         let password = '';
-        let charSet = charSetNumbers + charSetSpecial + charSetlettersLower + charSetlettersUpper;
+        let charSet = charSetlettersUpper + charSetlettersLower + charSetSpecial + charSetNumbers;
         
         for (let i=0; i < passLength; i++ ) {
         password += charSet.charAt(Math.floor(Math.random() * charSet.length));
@@ -33,7 +33,7 @@ generateBtn.addEventListener('click', function writePassword() {
     } else if (passUpper === false && passLower === true && passSpecial === true && passNumber === true) {
       function generatePassword (passLength) {
         let password = '';
-        let charSet = charSetNumbers + charSetSpecial + charSetlettersLower;
+        let charSet = charSetlettersLower + charSetSpecial + charSetNumbers;
         
         for (let i=0; i < passLength; i++ ) {
         password += charSet.charAt(Math.floor(Math.random() * charSet.length));
@@ -43,7 +43,7 @@ generateBtn.addEventListener('click', function writePassword() {
     } else if (passUpper === false && passLower === true && passSpecial === true && passNumber === false) {
       function generatePassword (passLength) {
         let password = '';
-        let charSet = charSetSpecial + charSetlettersLower;
+        let charSet = charSetlettersLower + charSetSpecial;
         
         for (let i=0; i < passLength; i++ ) {
         password += charSet.charAt(Math.floor(Math.random() * charSet.length));
@@ -51,16 +51,38 @@ generateBtn.addEventListener('click', function writePassword() {
         return password;
       } 
     } else if (passUpper === false && passLower === true && passSpecial === false && passNumber === true) {
-      function generatePassword () {
-        password = '';
-        charSet = charSetNumbers + charSetlettersLower;
-        for (let i=0; i < passLength; i++ )
-          password += charSet(Math.floor(Math.random() * char_list.length));
-          return password;
-      }
-      
-    }console.log(generatePassword(passLength));
-    document.write('Here is your password: ' + generatePassword(passLength)); 
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetlettersLower + charSetNumbers;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    } else if (passUpper === true && passLower === false && passSpecial === true && passNumber === true) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetSpecial + charSetlettersUpper + charSetNumbers;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    } else if (passUpper === true && passLower === false && passSpecial === true && passNumber === false) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetSpecial + charSetlettersUpper;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    }
+    document.getElementById("password").innerHTML = generatePassword(passLength);
   });
+  
   
    
