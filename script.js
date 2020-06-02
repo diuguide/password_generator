@@ -5,15 +5,19 @@ const charSetlettersUpper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 const charSetlettersLower = ["abcdefghijklmnopqrstuvwxyz"];
 const charSetSpecial = ["!@#$%^&*?"];
 const charSetNumbers = ["0123456789"];
-
 generateBtn.addEventListener('click', function writePassword() { 
-    const passLength = prompt('Length of Password:');
+    const passLength = prompt('Length of Password: (Must be between 8-128 characters)');
+      if (passLength < 8 || passLength > 128) {
+      alert("Password length must be between 8 and 128 characters, Please Try Again.");
+      return;
+      }
+    alert('Please choose OK - Yes and Cancel - No for the following choices:');  
     const passUpper = confirm('Do you want to include uppercase letters?');
     const passLower = confirm('Do you want to include lowercase letters?');
     const passSpecial = confirm('Do you want to include !@#$%^&*?');
     const passNumber = confirm('Do you want to include Numbers?');
-    const passConfirm = confirm('PLEASE REVIEW :: Your password will have ' + passLength + ' characters ' + '|| Include uppercase: ' + passUpper + ' || Include lowercase: ' + passLower + ' || Include special characters: ' + passSpecial + ' || Include numbers: ' + passNumber);
-
+    alert('PLEASE REVIEW :: Your password will have ' + passLength + ' characters ' + '|| Include uppercase: ' + passUpper + ' || Include lowercase: ' + passLower + ' || Include special characters: ' + passSpecial + ' || Include numbers: ' + passNumber);
+    
     if (passUpper === true && passLower === true && passSpecial === true && passNumber === true) {
       function generatePassword (passLength) {
         let password = '';
@@ -84,7 +88,7 @@ generateBtn.addEventListener('click', function writePassword() {
         }  
         return password;
       } 
-    }
+    } 
     document.getElementById("password").innerHTML = generatePassword(passLength);
   });
   
