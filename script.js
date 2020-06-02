@@ -1,10 +1,10 @@
 const generateBtn = document.querySelector('#generate');
 const textBox = document.querySelector('#password');
 const cardBox = document.querySelector('#wholecard');
-const charSetlettersUpper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-const charSetlettersLower = ["abcdefghijklmnopqrstuvwxyz"];
-const charSetSpecial = ["!@#$%^&*?"];
-const charSetNumbers = ["0123456789"];
+const charSetlettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const charSetlettersLower = "abcdefghijklmnopqrstuvwxyz";
+const charSetSpecial = "!@#$%^&*?";
+const charSetNumbers = "0123456789";
 generateBtn.addEventListener('click', function writePassword() { 
     const passLength = prompt('Length of Password: (Must be between 8-128 characters)');
       if (passLength < 8 || passLength > 128 || isNaN(passLength) === true) {
@@ -88,7 +88,47 @@ generateBtn.addEventListener('click', function writePassword() {
         }  
         return password;
       } 
-    } 
+    } else if (passUpper === true && passLower === false && passSpecial === false && passNumber === false) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetlettersUpper;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    } else if (passUpper === false && passLower === true && passSpecial === false && passNumber === false) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetlettersLower;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    } else if (passUpper === false && passLower === false && passSpecial === true && passNumber === false) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetSpecial;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    } else if (passUpper === false && passLower === false && passSpecial === false && passNumber === true) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetNumbers;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
+    }
     document.getElementById("password").innerHTML = generatePassword(passLength);
   });
   
