@@ -7,11 +7,11 @@ const charSetSpecial = ["!@#$%^&*?"];
 const charSetNumbers = ["0123456789"];
 generateBtn.addEventListener('click', function writePassword() { 
     const passLength = prompt('Length of Password: (Must be between 8-128 characters)');
-      if (passLength < 8 || passLength > 128) {
-      alert("Password length must be between 8 and 128 characters, Please Try Again.");
+      if (passLength < 8 || passLength > 128 || isNaN(passLength) === true) {
+      alert("Password length must be a number between 8 and 128, Please Try Again.");
       return;
       }
-    alert('Please choose OK - Yes and Cancel - No for the following choices:');  
+    alert('Please click OK for YES and Cancel for NO');  
     const passUpper = confirm('Do you want to include uppercase letters?');
     const passLower = confirm('Do you want to include lowercase letters?');
     const passSpecial = confirm('Do you want to include !@#$%^&*?');
