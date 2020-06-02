@@ -128,6 +128,16 @@ generateBtn.addEventListener('click', function writePassword() {
         }  
         return password;
       } 
+    } else if (passUpper === true && passLower === true && passSpecial === false && passNumber === false) {
+      function generatePassword (passLength) {
+        let password = '';
+        let charSet = charSetlettersLower + charSetlettersUpper;
+        
+        for (let i=0; i < passLength; i++ ) {
+        password += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }  
+        return password;
+      } 
     }
     document.getElementById("password").innerHTML = generatePassword(passLength);
   });
