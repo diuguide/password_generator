@@ -5,7 +5,8 @@ const charSetlettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const charSetlettersLower = "abcdefghijklmnopqrstuvwxyz";
 const charSetSpecial = "!@#$%^&*?";
 const charSetNumbers = "0123456789";
-generateBtn.addEventListener('click', function writePassword() { 
+generateBtn.addEventListener('click', function writePassword() {
+    textBox.textContent = ''; 
     const passLength = prompt('Length of Password: (Must be between 8-128 characters)');
       if (passLength < 8 || passLength > 128 || isNaN(passLength) === true) {
       alert("Password length must be a number between 8 and 128, Please Try Again.");

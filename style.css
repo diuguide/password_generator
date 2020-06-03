@@ -99,7 +99,6 @@ button[disabled] {
 .float-right {
   float: right;
 }
-
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -131,11 +130,6 @@ button[disabled] {
   font-size: 10px;
   margin-top: 50px;
 }
-.links {
-  text-align: center;
-  margin: 10px;
-}
-
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
@@ -147,7 +141,6 @@ button[disabled] {
     font-size: 1rem;
   }
 }
-
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
