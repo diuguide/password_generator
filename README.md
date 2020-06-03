@@ -7,4 +7,4 @@ The coding for this page was done on the script.js file.  I used w3schools, othe
 
 Deployed project: https://diuguide.github.io/password_generator/
 
-Screenshot: ![Alt text](/images/screenpassgen.png "Screenshot")
+Screenshot: ![screenshot](images\screenpasswordgen.png "Screenshot")
